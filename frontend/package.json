@@ -1,0 +1,38 @@
+{
+  "name": "frontend",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
+    "axios": "^1.11.0",
+    "element-plus": "^2.10.4",
+    "icons-vue": "^1.0.9",
+    "marked": "^16.1.1",
+    "pinia": "^3.0.3",
+    "vue": "^3.5.17",
+    "vue-router": "^4.5.1",
+    "vue-video-play": "^7.0.4",
+    "vue3-video-play": "^1.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^24.1.0",
+    "@vitejs/plugin-vue": "^6.0.0",
+    "@vue/tsconfig": "^0.7.0",
+    "sass": "^1.89.2",
+    "typescript": "~5.8.3",
+    "unplugin-auto-import": "^19.3.0",
+    "unplugin-vue-components": "^28.8.0",
+    "vite": "^7.0.4",
+    "vue-tsc": "^2.2.12"
+  },
+  "description": "-   **框架:** [Vue 3](https://vuejs.org/) (使用 Composition API & `<script setup>`) -   **构建工具:** [Vite](https://vitejs.dev/) -   **状态管理:** [Pinia](https://pinia.vuejs.org/) -   **UI 组件库:** [Element Plus](https://element-plus.org/) -   **图标库:** `@element-plus/icons-vue` -   **编程语言:** [TypeScript](https://www.typescriptlang.org/) -   **HTTP客户端:** [Axios](https://axios-http.com/) -   **CSS预处理器:** [Sass/SCSS](https://sass-lang.com/) -   **代码格式化:** [Prettier](https://prettier.io/) -   **Node.js版本管理:** [nvm](https://github.com/nvm-sh/nvm) (推荐使用 v20.x LTS)",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,111 @@
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.5.0
+pydantic-settings==2.1.0
+python-multipart==0.0.6
+
+# Neo4j数据库
+neo4j==5.14.1
+
+# HTTP请求
+requests==2.31.0
+requests-toolbelt==1.0.0
+
+# 环境变量
+python-dotenv==1.0.0
+
+# 可选：用于更好的JSON序列化
+orjson==3.9.10
+
+# 可选：用于API限流
+slowapi==0.1.9
+
+# 可选：用于缓存
+redis==5.0.1
+
+# 可选：用于任务队列
+celery==5.3.4
+
+# 可选：用于监控
+prometheus-client==0.19.0 
+
+
+# FastAPI & Web Server
+fastapi
+uvicorn[standard]
+gunicorn
+python-multipart
+
+# Pydantic for settings management
+pydantic
+pydantic-settings
+
+# Asynchronous Task Queue
+celery
+redis
+
+# Database Connectors
+neo4j
+chromadb
+
+# AI & NLP (Core)
+transformers
+torch
+sentence-transformers # 如果本地评分或嵌入需要
+numpy
+scipy # 某些模型可能需要
+
+# Document & File Processing
+python-pptx # for PPTX
+PyMuPDF # for PDF
+pydub   # for audio processing
+ffmpeg-python # pydub的依赖
+
+# Web Scraping & HTTP Requests
+requests
+beautifulsoup4
+
+# Utilities
+python-dotenv
+json-repair
+websocket-client # for Spark WS API
+
+# Authentication & Cryptography
+pycryptodome # 某些鉴权库可能需要
+# FastAPI & Web Server
+fastapi
+uvicorn[standard]
+gunicorn
+
+# Pydantic for settings management
+pydantic-settings
+
+# Asynchronous Task Queue
+celery
+redis
+
+# Database Connectors
+neo4j
+chromadb
+psycopg2-binary  # 如果用PostgreSQL作为meta_store
+pydub            # 音频处理
+ffmpeg-python    # FFmpeg的Python封装
+
+# AI & Machine Learning
+torch
+transformers
+sentence-transformers
+peft             # 用于加载LoRA权重
+accelerate       # Hugging Face模型加速
+
+# Web Scraping & HTTP Requests
+requests
+beautifulsoup4
+websocket-client
+
+# Utilities
+python-dotenv
+json-repair
+numpy
+uvloop         # 高性能事件循环 (可选)
+httptools      # 高性能HTTP解析器 (可选)

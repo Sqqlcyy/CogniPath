@@ -1,0 +1,136 @@
+/* 
+ * ===================================================================
+ *  CogniPath AI - 全局样式主文件 (V3.0 - 黑金科技风)
+ * ===================================================================
+ */
+
+// ----------------- 1. 导入Element Plus基础样式 -----------------
+@use "element-plus/theme-chalk/src/index.scss" as *;
+
+// ----------------- 2. 全局CSS变量定义 (我们的设计系统) -----------------
+:root {
+  // --- 色彩体系 ---
+  --bg-color: #0C0C0C;                           // 最深邃的背景
+  --bg-gradient: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%); // 渐变背景
+  --panel-bg-color: rgba(26, 26, 26, 0.85);      // 面板背景 (带透明度以实现玻璃效果)
+  --panel-bg-light: rgba(45, 45, 45, 0.8);       // 稍亮的面板色 (如聊天气泡)
+  
+  --text-primary: #F0F0F0;                       // 主文本色 (柔和白)
+  --text-secondary: #8a8a8a;                     // 次要/提示文本色
+  
+  --border-color: #2D2D2D;                       // 边框和分割线
+  
+  // 主强调色 - 黑金
+  --accent-gold-primary: #FFC837;
+  --accent-gold-secondary: #FF8008;
+  --accent-gold-gradient: linear-gradient(135deg, var(--accent-gold-primary) 0%, var(--accent-gold-secondary) 100%);
+  --accent-gold-glow: rgba(255, 200, 55, 0.3);
+  
+  // 次强调色 - 黑红 (用于警告、删除或点缀)
+  --accent-red: #D94452;
+  --accent-red-glow: rgba(217, 68, 82, 0.3);
+
+  // --- 尺寸与圆角 ---
+  --border-radius-medium: 8px;
+  --border-radius-large: 12px;
+}
+
+// ----------------- 3. 全局基础与动画样式 -----------------
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// 动态星空背景
+.stars-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2; // 在最底层
+  background: var(--bg-gradient);
+  
+  .stars-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+      radial-gradient(2px 2px at 40px 70px, var(--accent-gold-primary), transparent),
+      radial-gradient(1px 1px at 90px 40px, var(--accent-gold-secondary), transparent),
+      radial-gradient(1px 1px at 130px 80px, #fff, transparent),
+      radial-gradient(1px 1px at 170px 120px, var(--accent-red), transparent), // 加入红色星点
+      radial-gradient(2px 2px at 160px 30px, var(--accent-gold-primary), transparent);
+    background-repeat: repeat;
+    background-size: 250px 150px; // 调整大小让星星不那么密集
+    animation: sparkle 5s linear infinite;
+  }
+}
+
+@keyframes sparkle {
+  from { transform: translateY(0px); }
+  to { transform: translateY(-150px); } // 动画行程更长
+}
+
+// 全局滚动条美化
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: rgba(45, 45, 45, 0.3); }
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 200, 55, 0.3);
+  border-radius: 4px;
+  &:hover { background: rgba(255, 200, 55, 0.5); }
+}
+
+// ----------------- 4. Element Plus 组件样式深度定制 -----------------
+
+// --- Panel (通用面板样式) ---
+.panel {
+  background: var(--panel-bg-color);
+  backdrop-filter: blur(10px); // 玻璃拟态效果
+  border: 1px solid var(--border-color);
+  z-index: 1;
+}
+
+// --- Button (按钮) ---
+.el-button.el-button--primary {
+    background: var(--accent-gold-gradient) !important;
+    border: none !important;
+    color: var(--bg-color) !important;
+    font-weight: bold;
+    box-shadow: 0 0 15px var(--accent-gold-glow);
+    transition: all 0.3s ease;
+
+    &:hover, &:focus {
+        box-shadow: 0 0 25px var(--accent-gold-glow);
+        transform: translateY(-1px);
+    }
+}
+
+// --- Tree (知识树) ---
+.el-tree {
+  background: transparent !important;
+  .el-tree-node__content {
+    background: transparent !important;
+    color: var(--text-primary);
+    &:hover { background: rgba(255, 255, 255, 0.05) !important; }
+  }
+  .el-tree-node.is-current > .el-tree-node__content {
+    background: linear-gradient(90deg, rgba(255, 200, 55, 0.2), rgba(255, 128, 8, 0)) !important;
+    box-shadow: 0 0 10px var(--accent-gold-glow);
+    color: var(--accent-gold-primary) !important;
+  }
+}
+
+// --- 其他组件... ---
+// ... 可以继续添加对Dialog, Input, Progress等组件的样式覆盖 ...
